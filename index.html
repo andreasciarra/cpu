@@ -138,38 +138,68 @@
             <h2 class="text-3xl font-bold text-slate-800 mb-2">2. La Gerarchia delle Memorie</h2>
             <p class="text-slate-500 mb-8">Il principio fondamentale: più una memoria è vicina alla CPU, più è veloce, piccola e costosa.</p>
             
-            <div class="flex flex-col items-center gap-2 mb-8">
+            <div class="flex flex-col gap-2 max-w-4xl mx-auto">
+                
                 <!-- Registri -->
-                <div class="pyramid-layer w-1/4 bg-red-500 text-white rounded-t-xl py-3 px-4 text-center shadow-md relative group">
-                    <span class="font-bold">Registri</span>
-                    <div class="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-48 bg-slate-800 text-white text-xs rounded p-2 pointer-events-none transition-opacity z-10">
-                        Velocità: Istantanea<br>Capacità: Pochi Byte<br>Posizione: Dentro la CPU
+                <div class="flex items-center gap-4 group">
+                    <div class="w-1/2 flex justify-end">
+                        <div class="w-1/4 min-w-[100px] bg-red-500 text-white rounded-t-xl py-3 px-4 text-center shadow-md transition-transform group-hover:scale-105">
+                            <span class="font-bold text-xs sm:text-sm">Registri</span>
+                        </div>
+                    </div>
+                    <div class="w-1/2 bg-red-50 border-l-4 border-red-500 p-3 rounded-r-xl shadow-sm">
+                        <p class="text-xs sm:text-sm text-red-900">
+                            <strong>Velocità:</strong> Istantanea | <strong>Capacità:</strong> Pochi Byte<br>
+                            <span class="text-red-700 italic">Interni alla CPU, usati per i calcoli immediati.</span>
+                        </p>
                     </div>
                 </div>
                 
                 <!-- Cache -->
-                <div class="pyramid-layer w-2/4 bg-orange-400 text-white py-4 px-4 text-center shadow-md relative group">
-                    <span class="font-bold">Cache (L1, L2, L3)</span>
-                    <div class="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-56 bg-slate-800 text-white text-xs rounded p-2 pointer-events-none transition-opacity z-10">
-                        Velocità: Altissima<br>Capacità: Megabyte (MB)<br>Posizione: Vicino/Dentro la CPU
+                <div class="flex items-center gap-4 group">
+                    <div class="w-1/2 flex justify-end">
+                        <div class="w-2/4 min-w-[150px] bg-orange-400 text-white py-4 px-4 text-center shadow-md transition-transform group-hover:scale-105">
+                            <span class="font-bold text-xs sm:text-sm">Cache (L1, L2, L3)</span>
+                        </div>
+                    </div>
+                    <div class="w-1/2 bg-orange-50 border-l-4 border-orange-400 p-3 rounded-r-xl shadow-sm">
+                        <p class="text-xs sm:text-sm text-orange-900">
+                            <strong>Velocità:</strong> Altissima | <strong>Capacità:</strong> Megabyte (MB)<br>
+                            <span class="text-orange-700 italic">Vicino ai core, evita i rallentamenti della RAM.</span>
+                        </p>
                     </div>
                 </div>
                 
                 <!-- RAM -->
-                <div class="pyramid-layer w-3/4 bg-blue-500 text-white py-5 px-4 text-center shadow-md relative group">
-                    <span class="font-bold">Memoria RAM</span>
-                    <div class="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-56 bg-slate-800 text-white text-xs rounded p-2 pointer-events-none transition-opacity z-10">
-                        Velocità: Veloce<br>Capacità: Gigabyte (GB)<br>Posizione: Scheda Madre
+                <div class="flex items-center gap-4 group">
+                    <div class="w-1/2 flex justify-end">
+                        <div class="w-3/4 min-w-[200px] bg-blue-500 text-white py-5 px-4 text-center shadow-md transition-transform group-hover:scale-105">
+                            <span class="font-bold text-xs sm:text-sm">Memoria RAM</span>
+                        </div>
+                    </div>
+                    <div class="w-1/2 bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r-xl shadow-sm">
+                        <p class="text-xs sm:text-sm text-blue-900">
+                            <strong>Velocità:</strong> Veloce | <strong>Capacità:</strong> Gigabyte (GB)<br>
+                            <span class="text-blue-700 italic">Contiene dati e programmi in esecuzione.</span>
+                        </p>
                     </div>
                 </div>
                 
                 <!-- Memoria di Massa -->
-                <div class="pyramid-layer w-full bg-slate-600 text-white rounded-b-xl py-6 px-4 text-center shadow-md relative group">
-                    <span class="font-bold">Memoria di Massa (SSD/HDD)</span>
-                    <div class="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-56 bg-slate-800 text-white text-xs rounded p-2 pointer-events-none transition-opacity z-10">
-                        Velocità: Lenta<br>Capacità: Terabyte (TB)<br>Posizione: Archiviazione fissa
+                <div class="flex items-center gap-4 group">
+                    <div class="w-1/2 flex justify-end">
+                        <div class="w-full bg-slate-600 text-white rounded-b-xl py-6 px-4 text-center shadow-md transition-transform group-hover:scale-105">
+                            <span class="font-bold text-xs sm:text-sm">Memoria di Massa (SSD/HDD)</span>
+                        </div>
+                    </div>
+                    <div class="w-1/2 bg-slate-100 border-l-4 border-slate-600 p-3 rounded-r-xl shadow-sm">
+                        <p class="text-xs sm:text-sm text-slate-900">
+                            <strong>Velocità:</strong> Lenta | <strong>Capacità:</strong> Terabyte (TB)<br>
+                            <span class="text-slate-700 italic">Archiviazione permanente di tutti i file.</span>
+                        </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
